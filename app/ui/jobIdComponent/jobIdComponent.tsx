@@ -27,6 +27,7 @@ export default function JobIdComponent() {
                 return;
             }
             updateUserFunc({ status: res?.status });
+            updateUserFunc({ data: res?.result == null ? [] : res?.result });
             updateUserFunc({ loading: false });
         }  catch (error) {
             console.error("Error refreshing courses:", error);

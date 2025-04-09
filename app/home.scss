@@ -114,3 +114,9 @@ form .error > :nth-child(1) {
   .table {
     overflow: hidden;
   }
+
+  .preventButtonClick {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }

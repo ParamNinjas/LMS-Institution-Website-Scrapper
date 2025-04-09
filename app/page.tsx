@@ -41,6 +41,7 @@ export default function Home() {
     return (
       <main className="main">
         <FormComponent />
+        {formInfo.jobId && <JobIdComponent />}
         <div className="list-courses">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((_, index) => (
             <SkeletonCard key={index} />

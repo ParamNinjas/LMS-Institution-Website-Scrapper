@@ -101,7 +101,7 @@ export default function FormComponent() {
                     value={formInfo.url}
                     onChange={(e) => updateUserFunc({ url: e.target.value })}
                 />
-                <Button type="submit">Submit</Button>
+                <Button type="submit" className={`${formInfo.jobId && "preventButtonClick"}`}>Submit</Button>
             </div>
         </form>
     );

@@ -4,6 +4,7 @@
     align-items: center;
     padding: 100px;
     height: 100dvh;
+    overflow-y: scroll;
 
     & > form {
         height: 100px;
@@ -35,7 +36,7 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        overflow-y: scroll;
+        // overflow-y: scroll;
 
         & .card-item {
             display: flex;

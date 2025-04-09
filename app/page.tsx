@@ -70,7 +70,9 @@ export default function Home() {
               <CardFooter className="card-footer">
                 <CardTitle>{course.title||'this is a custom title'}</CardTitle>
                 <CardDescription className="description">
-                  {course.description || "No description available."}
+                  {course.description
+                    ? course.description.split(" ").slice(0, 10).join(" ") + "..."
+                    : "No description available."}
                 </CardDescription>
               </CardFooter>
             </Card>

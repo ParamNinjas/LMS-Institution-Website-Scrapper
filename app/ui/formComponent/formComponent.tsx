@@ -26,6 +26,8 @@ export default function FormComponent() {
             return;
         }
 
+        
+
         if (!formInfo.env_clientKey) {
             updateUserFunc({
                 error: {
@@ -38,6 +40,25 @@ export default function FormComponent() {
             console.log(`error: ${formInfo.error.envError} ${formInfo.error.errorText}`);
             return;
         }
+
+
+        updateUserFunc({
+            error: {
+                errorText: "",
+                urlError: false,
+                envError: false,
+                dataError: false,
+            }
+        });
+
+        updateUserFunc({
+            error: {
+                errorText: "",
+                urlError: false,
+                envError: false,
+                dataError: false,
+            }
+        });
 
         try {
             updateUserFunc({ loading: true });

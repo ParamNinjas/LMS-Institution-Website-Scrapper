@@ -26,6 +26,24 @@ export default function FormComponent() {
             return;
         }
 
+        if (
+            !formInfo.url || 
+            !/^\/browse\/[a-z0-9-]+$/i.test(formInfo.url)  // URL format check
+        ) {
+            updateUserFunc({
+                error: {
+                    errorText: !formInfo.url
+                        ? "URL cannot be empty"
+                        : `URL must follow the format "/browse/something" ("/browse/" is required)`,
+                    urlError: true,
+                    envError: false,
+                    dataError: false,
+                }
+            });
+            console.log(`error: ${formInfo.error.urlError} ${formInfo.error.errorText}`);
+            return;
+        }
+
         
 
         if (!formInfo.env_clientKey) {
@@ -106,7 +124,7 @@ export default function FormComponent() {
                     <SelectTrigger className={`w-[250px]`}>
                         <SelectValue placeholder="Select Env" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent style={{zIndex:999}}>
                         <SelectGroup>
                             <SelectItem value="ec51852d24b1450faff0a868e84d05e5">Dev</SelectItem>
                             <SelectItem value="1432de273b4b46bbaece832f43547e80">QA</SelectItem>

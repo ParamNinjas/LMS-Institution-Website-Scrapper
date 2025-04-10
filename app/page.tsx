@@ -7,6 +7,7 @@ import SkeletonCard from './loading';
 import { formStore } from './stores/store';
 import { CannotBeEmpty } from './ui/formComponent/alerts/cannotBeEmpty';
 import JobIdComponent from './ui/jobIdComponent/jobIdComponent';
+import { Button } from '@/components/ui/button';
 
 type Course = {
   id: string;
@@ -56,6 +57,7 @@ export default function Home() {
       <FormComponent />
 
         {formInfo.jobId && <JobIdComponent />}
+        {formInfo.data.length > 0 && <Button variant="ghost">total: {formInfo.data.length}</Button>}
       <div className="list-courses">
         {formInfo.data.length > 0 &&
           formInfo.data.map((course: Course, index: number) => (

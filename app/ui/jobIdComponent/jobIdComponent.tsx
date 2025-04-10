@@ -46,7 +46,10 @@ export default function JobIdComponent() {
   return (
     <div>
           <Table className='table'>
-          <TableCaption>The scraper is running in the background.</TableCaption>
+          <TableCaption>
+            {formInfo.status == "Processing" ? "The scraper is running in the background. Please wait for a few minutes to get the results." : "The scraper has completed. You can view the results below."
+            }
+           .</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">Id</TableHead>

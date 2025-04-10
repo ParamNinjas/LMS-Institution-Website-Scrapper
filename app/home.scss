@@ -8,13 +8,18 @@
 
     & > form {
         height: 100px;
-        width: 600px;
+        width: 100%;
         display: flex;
         justify-content: center;
+        position: sticky;
+        top: -100px;
+        background-color: white;
+        z-index: 100;
+        
 
         & .input {
             height: 100px;
-            width: 80%;
+            width: 600px;
             display: flex;
             justify-content: center;
             align-items: center;

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { refreshCourses } from "@/app/actions/endpoints";
+import { BottomModal } from "./clearModal";
 
 export default function JobIdComponent() {
   const formInfo = formStore((state) => state?.form);
@@ -46,7 +47,10 @@ export default function JobIdComponent() {
   return (
     <div>
           <Table className='table'>
-          <TableCaption>The scraper is running in the background.</TableCaption>
+          <TableCaption>
+            {formInfo.status == "Processing" ? "The scraper is running in the background. Please wait for a few minutes to get the results." : "The scraper has completed. You can view the results below."
+            }
+           .</TableCaption>
           <TableHeader>
             <TableRow>
               <TableHead className="w-[100px]">Id</TableHead>
@@ -71,6 +75,7 @@ export default function JobIdComponent() {
                   Loading...
                 </Button>
                 :<Button variant="secondary" onClick={refreshFucntion}>refresh</Button>}
+                <BottomModal />
               </TableCell>
             </TableRow>
           </TableBody>

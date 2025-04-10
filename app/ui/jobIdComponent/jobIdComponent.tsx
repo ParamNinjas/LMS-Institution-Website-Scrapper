@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { refreshCourses } from "@/app/actions/endpoints";
+import { BottomModal } from "./clearModal";
 
 export default function JobIdComponent() {
   const formInfo = formStore((state) => state?.form);
@@ -74,6 +75,7 @@ export default function JobIdComponent() {
                   Loading...
                 </Button>
                 :<Button variant="secondary" onClick={refreshFucntion}>refresh</Button>}
+                <BottomModal />
               </TableCell>
             </TableRow>
           </TableBody>

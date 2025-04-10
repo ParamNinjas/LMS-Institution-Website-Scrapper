@@ -41,7 +41,7 @@ export default function Home() {
   if (formInfo.loading) {
     return (
       <main className="main">
-        <FormComponent />
+        {/* <FormComponent /> */}
         {formInfo.jobId && <JobIdComponent />}
         <div className="list-courses">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((_, index) => (
@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <main className="main">
-      <FormComponent />
+     {formInfo.status == "" &&  <FormComponent />} 
 
         {formInfo.jobId && <JobIdComponent />}
         {formInfo.data.length > 0 && <Button variant="ghost">total: {formInfo.data.length}</Button>}
